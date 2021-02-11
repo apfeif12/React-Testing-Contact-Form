@@ -10,7 +10,7 @@ test("renders", () => {
 test("first name renders", () => {
   render(<ContactForm />);
 
-  const fNameInput = screen.getByPlaceholderText("Edd");
+  const fNameInput = screen.getByLabelText(/First Name/i);
 
   userEvent.type(fNameInput, "Alex");
 
@@ -21,7 +21,7 @@ test("first name renders", () => {
 test("last name renders", () => {
   render(<ContactForm />);
 
-  const lNameInput = screen.getByPlaceholderText("Burke");
+  const lNameInput = screen.getByLabelText(/Last Name/i);
 
   userEvent.type(lNameInput, "Pfeifer");
 
@@ -32,7 +32,7 @@ test("last name renders", () => {
 test("email renders", () => {
   render(<ContactForm />);
 
-  const emailInput = screen.getByPlaceholderText("bluebill1049@hotmail.com");
+  const emailInput = screen.getByLabelText(/Email/i);
 
   userEvent.type(emailInput, "alex@email.com");
 
